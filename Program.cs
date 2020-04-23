@@ -25,10 +25,38 @@ namespace Pavlovlala2
                 for (int j = 0; j < count; j++)
                 {
                     matrix[i, j] = rnd.Next(99);
-                    Console.Write(matrix[i, j] + " ");
+                    Console.Write(matrix[i, j] + "  ");
                 }
                 Console.WriteLine();
             }
+
+            int currentZeroCount = 0;
+            int maxZeroCount = 0;
+            int neededString = new int();
+            int[,] newMatrix = new int[count, count];
+            bool hasZero = false;
+
+            for (int i = 0; i < count; i++ )
+                {
+                for(int j = 0; j < count; j++)
+                    {
+                     if(matrix[i,j] == 0)
+                        {
+                        currentZeroCoutn++;
+                        hasZero = true;
+
+                        }
+                    }    
+
+                }
+
+
+
+
+
+
+
+
         }
         
     }
