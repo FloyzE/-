@@ -6,10 +6,39 @@ using System.Threading.Tasks;
 
 namespace Pavlovlala2
 {
+    
+    
+
     class Program
     {
+
         static void Main(string[] args)
         {
+            Random rnd = new Random();
+            int count = rnd.Next(2, 10);
+            int[,] matrix = new int[count, count];
+
+            Console.WriteLine("Матрица изначально");
+
+            for( int i = 0; i<count; i++ )
+            {
+                for(int j = 0; j<count; j++)
+                {
+                    matrix
+
+                }
+
+            }
         }
+        
     }
-}
+
+    }
+  
+
+
+
+
+    
+
+
