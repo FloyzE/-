@@ -4,21 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Pavlovlala2
 {
-    
-    
-
     class Program
     {
-
         static void Main(string[] args)
         {
             Random rnd = new Random();
             int count = rnd.Next(2, 10);
             int[,] matrix = new int[count, count];
 
-            Console.WriteLine("Матрица изначально");
+            Console.WriteLine("Матрица изначально:");
 
             for (int i = 0; i < count; i++)
             {
@@ -36,37 +33,48 @@ namespace Pavlovlala2
             int[,] newMatrix = new int[count, count];
             bool hasZero = false;
 
-            for (int i = 0; i < count; i++ )
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
                 {
-                for(int j = 0; j < count; j++)
+                    if (matrix[i, j] == 0)
                     {
-                     if(matrix[i,j] == 0)
-                        {
-                        currentZeroCoutn++;
+                        currentZeroCount++;
                         hasZero = true;
+                    }
+                }
+                if (currentZeroCount > maxZeroCount)
+                {
+                    maxZeroCount = currentZeroCount;
+                    neededString = i;
+                }
+                currentZeroCount = 0;
+                Console.WriteLine();
+            }
 
-                        }
-                    }    
+            Console.WriteLine("Матрица без нужно строки:");
+
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    if (i == neededString && hasZero)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        newMatrix[i, j] = matrix[i, j];
+                        Console.Write(newMatrix[i, j] + "  ");
+                    }
 
                 }
 
+                Console.WriteLine();
+            }
 
-
-
-
-
-
-
+            Console.Read();
         }
-        
     }
-
-    
-  
-
-
-
-
-    
-
+}
 
