@@ -20,20 +20,20 @@ namespace Pavlovlala2
 
             Console.WriteLine("Матрица изначально");
 
-            for( int i = 0; i<count; i++ )
+            for (int i = 0; i < count; i++)
             {
-                for(int j = 0; j<count; j++)
+                for (int j = 0; j < count; j++)
                 {
-                    matrix
-
+                    matrix[i, j] = rnd.Next(99);
+                    Console.Write(matrix[i, j] + " ");
                 }
-
+                Console.WriteLine();
             }
         }
         
     }
 
-    }
+    
   
 
 
